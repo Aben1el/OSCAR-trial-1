@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://pizzahutethiopia.com/_next/static/css/41d01ff09f04ba07.css" data-precedence="next"/>
+    <link rel="stylesheet" href="https://pizzahutethiopia.com/_next/static/css/ce178d2b3058a5fe.css" data-precedence="next"/>
+    <link rel="stylesheet" href="https://pizzahutethiopia.com/_next/static/css/d0d0829f561e78ed.css" data-precedence="next"/>
+    <link rel="stylesheet" href="https://pizzahutethiopia.com/_next/static/css/dc99630c3e90cecc.css" data-precedence="next"/>
+    <link rel="stylesheet" href="https://pizzahutethiopia.com/_next/static/css/44d28d00c46f5548.css" data-precedence="next"/>
+    <link rel="stylesheet" href="https://pizzahutethiopia.com/_next/static/css/cd44a1192ffbaf01.css" data-precedence="next"/>
+    <link rel="stylesheet" href="https://pizzahutethiopia.com/_next/static/css/c25b928ac559707e.css" data-precedence="next"/>
+    
+    <link rel="preload" as="script" fetchPriority="low" href="https://pizzahutethiopia.com/_next/static/chunks/webpack-0a4fad57b7998bdc.js"/>
+    <script src="https://pizzahutethiopia.com/_next/static/chunks/94c12b52-bd1acd04702d79d9.js" async=""></script>
+    <script src="https://pizzahutethiopia.com/_next/static/chunks/6842-0f370d0fb33b91cf.js" async=""></script>
+    <script src="https://pizzahutethiopia.com/_next/static/chunks/main-app-500b38bd8f007698.js" async=""></script>
+    
+    <link rel="preload" href="https://pizzahutethiopia.com/_next/static/css/93c7fa21671c3a34.css" as="style"/>
+    <link rel="preload" href="https://pizzahutethiopia.com/_next/static/css/b5d66106242042f9.css" as="style"/>
+    <link rel="preload" href="https://pizzahutethiopia.com/_next/static/css/0abdb191a61d56e3.css" as="style"/>
+    <link rel="preload" href="https://pizzahutethiopia.com/_next/static/css/fbfb23ae764bd69d.css" as="style"/>
+    <link rel="preload" href="https://pizzahutethiopia.com/_next/static/css/ef46db3751d8e999.css" as="style"/>
+    <link rel="preload" href="https://www.googletagmanager.com/gtm.js?id=GTM-TR55FZFG" as="style"/>
+    
+    <title>Pizza Hut Ethiopia: Pizza, Sides &amp; Desserts</title>
+    <meta name="description" content="Order your favorite pizza online from Pizza Hut Ethiopia. Explore a variety of delicious flavors and enjoy fast, reliable delivery to your doorstep."/>
+    <meta name="robots" content="index, follow"/>
+    <link rel="icon" href="https://pizzahutethiopia.com/favicon.ico" type="image/x-icon" sizes="3300x2550"/>
+</head>
+<body class="en ETH">
+    <noscript>
+        <iframe title="google-tag-manager-title" src="https://www.googletagmanager.com/ns.html?id=GTM-TR55FZFG" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    
+    <div id="mainloader">
+        <div class="loader-styling w-full h-[100vh] flex flex-col justify-center items-center gap-4" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background-color: #000;">
+            <div style="animation: bounce 1s infinite; text-align: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" width="150px" viewBox="0 0 3300 2550" enable-background="new 0 0 3300 2550">
+                    <path fill="#FFC72C" opacity="1.000000" stroke="none" d=" M2370.000000,2552.000000 C1580.000122,2552.000000 791.000305,2552.000000 2.000212,2552.000000 C2.000000,2127.000244 2.000000,1702.000366 2.000000,1277.000610 C2.000000,852.000671 2.000000,427.000793 2.000000,2.000660 C1101.999512,2.000440 2201.999023,2.000440 3301.999023,2.000220 C3301.999268,851.999329 3301.999268,1701.998657 3301.999512,2551.999023 C2991.666748,2552.000000 2681.333252,2552.000000 2370.000000,2552.000000 M1875.000000,805.679382 C2207.314209,805.679382 2539.628662,805.679382 2871.942871,805.679382 C2874.276123,805.679321 2876.609619,805.706848 2878.942383,805.673340 C2886.836426,805.560059 2893.913330,802.983276 2900.270020,798.399048 C2914.019287,788.484070 2919.476807,774.586792 2917.443848,758.298950 C2915.303467,741.148560 2904.302979,730.469788 2888.644043,724.309082 C2864.518555,714.817444 2840.284668,705.597229 2816.222412,695.948669 C2734.761475,663.283875 2653.107666,631.080872 2572.002930,597.551392 C2500.745361,568.092712 2430.175293,536.972961 2359.174316,506.887604 C2347.911377,502.115143 2341.941162,494.727264 2340.014160,482.585571 C2336.997314,463.576660 2332.886719,444.738098 2329.103760,425.854523 C2317.559082,368.226410 2305.141357,310.757599 2294.668457,252.936081 C2288.362061,218.119400 2258.189941,195.265381 2225.295898,195.329239 C1926.314331,195.909775 1627.331055,195.669769 1328.348267,195.669891 C1326.015137,195.669891 1323.677612,195.579819 1321.349487,195.687286 C1305.414795,196.422821 1291.845337,202.487396 1280.066284,213.258804 C1271.510620,221.082397 1266.202759,231.036728 1260.306030,240.678207 C1210.310059,322.423920 1160.176514,404.085846 1110.417114,485.975189 C1104.898682,495.057007 1097.958984,501.170990 1088.190918,504.811005 C1071.373047,511.078094 1054.776001,517.943909 1037.910767,524.075928 C967.627136,549.630432 897.446289,575.482727 826.908630,600.319641 C746.323853,628.694275 665.463684,656.292358 584.600708,683.868896 C534.246948,701.041077 483.642273,717.476257 433.199005,734.387634 C411.447479,741.680054 401.449768,764.936707 411.476776,785.121216 C418.485657,799.230103 430.054169,805.772766 446.082275,805.769043 C921.721497,805.658508 1397.360718,805.679321 1875.000000,805.679382 M891.000061,1617.669067 C875.668884,1617.669067 860.328674,1618.001709 845.008972,1617.582642 C826.874817,1617.086792 824.841492,1622.093994 818.978027,1636.519409 C818.605591,1637.435547 818.506470,1638.458740 818.204651,1639.408203 C801.593201,1691.670654 784.853394,1743.892822 768.468445,1796.226074 C765.585876,1805.433105 759.826294,1810.654663 751.137878,1813.873657 C737.121582,1819.066895 723.207275,1824.547607 709.347900,1830.149292 C686.389099,1839.428833 663.014954,1846.687744 637.849182,1845.658691 C599.048706,1844.071899 573.271118,1824.267456 564.026123,1787.676758 C563.212219,1784.455200 562.798950,1781.086426 561.580750,1778.032837 C560.980164,1776.527466 558.917358,1774.567627 557.602051,1774.629883 L593.456970,942.497253 Z" />
+                </svg>
+                <p style="color: #fff; font-family: sans-serif; font-size: 1.2rem; margin-top: 15px;">Loading Pizza Hut Ethiopia...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="__next"></div>
+
+    <style>
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</body>
+</html>
