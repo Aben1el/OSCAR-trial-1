@@ -95,15 +95,11 @@
             border-radius: 2px;
         }
 
-        /* Hero Section */
+        /* Hero Section with Parallax */
         .hero {
             margin-top: 60px;
             height: 100vh;
-            background: linear-gradient(135deg, rgba(255, 107, 53, 0.8), rgba(0, 78, 137, 0.8)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23FF6B35" width="1200" height="600"/><circle cx="200" cy="150" r="100" fill="%23F7931E" opacity="0.1"/><circle cx="1000" cy="450" r="150" fill="%23004E89" opacity="0.1"/></svg>');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.8), rgba(0, 78, 137, 0.8));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,6 +107,18 @@
             color: white;
             position: relative;
             overflow: hidden;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23FF6B35;stop-opacity:0.1"/><stop offset="100%25" style="stop-color:%23004E89;stop-opacity:0.1"/></linearGradient></defs><rect fill="url(%23grad1)" width="1200" height="600"/><circle cx="200" cy="150" r="100" fill="%23F7931E" opacity="0.15"/><circle cx="1000" cy="450" r="150" fill="%23004E89" opacity="0.15"/><path d="M0,300 Q300,250 600,300 T1200,300" stroke="%23FF6B35" stroke-width="2" fill="none" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            will-change: transform;
         }
 
         .hero::before {
@@ -123,6 +131,7 @@
             background: radial-gradient(circle, rgba(255, 107, 53, 0.3), transparent);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
+            z-index: 1;
         }
 
         .hero::after {
@@ -135,11 +144,12 @@
             background: radial-gradient(circle, rgba(247, 147, 30, 0.3), transparent);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite reverse;
+            z-index: 1;
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 10;
             animation: slideInUp 1s ease-out;
         }
 
@@ -149,6 +159,18 @@
             font-weight: 900;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
             letter-spacing: 2px;
+        }
+
+        .hero .rating {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
         }
 
         .hero p {
@@ -190,16 +212,14 @@
             color: var(--primary-color);
         }
 
-        /* About Section */
-        .about {
+        /* Highlights Section */
+        .highlights {
             padding: 5rem 2rem;
             background: white;
             text-align: center;
         }
 
-        .about h2,
-        .menu h2,
-        .contact h2 {
+        .highlights h2 {
             font-size: clamp(2rem, 5vw, 3rem);
             margin-bottom: 2rem;
             color: var(--secondary-color);
@@ -207,9 +227,7 @@
             display: inline-block;
         }
 
-        .about h2::after,
-        .menu h2::after,
-        .contact h2::after {
+        .highlights h2::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -221,27 +239,28 @@
             border-radius: 2px;
         }
 
-        .about-content {
+        .highlights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .about-card {
+        .highlight-card {
             padding: 2rem;
             background: var(--light-color);
             border-radius: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-color);
         }
 
-        .about-card:hover {
+        .highlight-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .about-card h3 {
+        .highlight-card h3 {
             color: var(--primary-color);
             font-size: 1.5rem;
             margin-bottom: 1rem;
@@ -251,6 +270,27 @@
         .menu {
             padding: 5rem 2rem;
             background: linear-gradient(135deg, var(--light-color), #f0f0f0);
+        }
+
+        .menu h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .menu h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
         }
 
         .menu-grid {
@@ -283,6 +323,24 @@
             justify-content: center;
             font-size: 4rem;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu-card:hover .menu-image::after {
+            opacity: 1;
         }
 
         .menu-info {
@@ -305,6 +363,7 @@
             font-size: 1.5rem;
             color: var(--primary-color);
             font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
         .order-btn {
@@ -325,11 +384,159 @@
             transform: scale(1.02);
         }
 
+        /* Reviews Section */
+        .reviews {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .reviews h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .reviews h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .review-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            background: var(--light-color);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .review-rating {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .review-date {
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .review-text {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .review-helpful {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .review-helpful button {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .review-helpful button:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
         /* Contact Section */
         .contact {
             padding: 5rem 2rem;
-            background: white;
+            background: linear-gradient(135deg, var(--light-color), #f0f0f0);
+        }
+
+        .contact h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            width: 100%;
             text-align: center;
+        }
+
+        .contact h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
         }
 
         .contact-content {
@@ -341,15 +548,17 @@
 
         .contact-item {
             padding: 2rem;
-            background: var(--light-color);
+            background: white;
             border-radius: 10px;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
 
         .contact-item:hover {
             background: var(--primary-color);
             color: white;
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .contact-item h3 {
@@ -368,11 +577,14 @@
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .form-group {
             margin-bottom: 1.5rem;
-            text-align: left;
         }
 
         .form-group label {
@@ -457,6 +669,15 @@
             }
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             nav {
@@ -504,13 +725,15 @@
                 margin-top: 50px;
             }
 
-            .about,
+            .highlights,
             .menu,
+            .reviews,
             .contact {
                 padding: 3rem 1rem;
             }
 
-            .menu-grid {
+            .menu-grid,
+            .highlights-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -533,15 +756,14 @@
                 font-size: 1rem;
             }
 
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
             .cta-button {
                 display: block;
                 width: 90%;
                 margin: 10px auto;
+            }
+
+            .review-stats {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -552,8 +774,9 @@
         <div class="logo">🍔 OSCAR BURGER</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#highlights">Highlights</a></li>
             <li><a href="#menu">Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger" onclick="toggleMenu()">
@@ -563,31 +786,48 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Parallax -->
     <section class="hero" id="home">
+        <div class="parallax-bg" id="parallaxBg"></div>
         <div class="hero-content">
             <h1>OSCAR BURGER</h1>
+            <div class="rating">
+                <div class="stars">★★★★★</div>
+                <p>4.5/5 · 45+ Reviews</p>
+            </div>
             <p>Crafted with passion, served with love</p>
             <button class="cta-button" onclick="scrollToMenu()">Order Now</button>
             <button class="cta-button outline" onclick="scrollToContact()">Get in Touch</button>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Highlights Section -->
+    <section class="highlights" id="highlights">
         <h2>Why Choose Us?</h2>
-        <div class="about-content">
-            <div class="about-card">
-                <h3>🥩 Premium Quality</h3>
-                <p>We use only the finest ingredients sourced from trusted local suppliers. Every burger is made with fresh, high-quality beef.</p>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <h3>🥩 Oscar Jumbo Special</h3>
+                <p>Our signature burger with premium beef, caramelized onions, triple cheese, crispy bacon, and our secret Oscar sauce. The ultimate burger experience!</p>
             </div>
-            <div class="about-card">
-                <h3>⚡ Fast Service</h3>
-                <p>Quick preparation without compromising on quality. Your order is prepared fresh and served hot within minutes.</p>
+            <div class="highlight-card">
+                <h3>🍔 Jambo Burger</h3>
+                <p>Generous portions, bold flavors, and perfectly grilled beef patties. A customer favorite that keeps people coming back for more.</p>
             </div>
-            <div class="about-card">
-                <h3>😋 Delicious Taste</h3>
-                <p>Our secret recipe and expert chefs ensure every bite is bursting with flavor. Come taste the difference!</p>
+            <div class="highlight-card">
+                <h3>⚡ Fast & Fresh</h3>
+                <p>Quick preparation without compromising quality. Every burger is made to order with the freshest ingredients available.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>😋 Premium Quality</h3>
+                <p>We use only the finest locally-sourced ingredients and maintain the highest standards of food preparation and cleanliness.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>👥 Great Hospitality</h3>
+                <p>Humble, disciplined, and welcoming staff who go above and beyond to ensure you have an amazing dining experience.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>🌟 Fair Pricing</h3>
+                <p>Excellent value for money with ETB 200-1,800 per person depending on your meal selection and preferences.</p>
             </div>
         </div>
     </section>
@@ -599,18 +839,18 @@
             <div class="menu-card">
                 <div class="menu-image">🍔</div>
                 <div class="menu-info">
-                    <h3>Classic Oscar Burger</h3>
-                    <p>Juicy beef patty with lettuce, tomato, onion, and our special sauce</p>
-                    <div class="price">$8.99</div>
+                    <h3>Oscar Jumbo Special</h3>
+                    <p>Premium beef patty with triple cheese, crispy bacon, caramelized onions, special Oscar sauce, lettuce & tomato</p>
+                    <div class="price">ETB 450-600</div>
                     <button class="order-btn">Add to Order</button>
                 </div>
             </div>
             <div class="menu-card">
                 <div class="menu-image">🧅</div>
                 <div class="menu-info">
-                    <h3>Cheese Delight</h3>
-                    <p>Double cheese, crispy bacon, caramelized onions, and garlic mayo</p>
-                    <div class="price">$10.99</div>
+                    <h3>Jambo Burger</h3>
+                    <p>Generous portions with bold flavors, perfectly grilled beef, caramelized toppings, and authentic taste</p>
+                    <div class="price">ETB 350-500</div>
                     <button class="order-btn">Add to Order</button>
                 </div>
             </div>
@@ -618,26 +858,26 @@
                 <div class="menu-image">🌶️</div>
                 <div class="menu-info">
                     <h3>Spicy Inferno</h3>
-                    <p>Hot peppers, jalapeños, spicy sauce, and cheddar cheese</p>
-                    <div class="price">$9.99</div>
+                    <p>Hot peppers, jalapeños, spicy sauce, cheddar cheese, fresh vegetables for those who love heat</p>
+                    <div class="price">ETB 400-550</div>
                     <button class="order-btn">Add to Order</button>
                 </div>
             </div>
             <div class="menu-card">
-                <div class="menu-image">🥬</div>
+                <div class="menu-image">🍕</div>
                 <div class="menu-info">
-                    <h3>Veggie Heaven</h3>
-                    <p>Plant-based patty with fresh vegetables and herb mayo</p>
-                    <div class="price">$8.49</div>
+                    <h3>Delicious Pizza</h3>
+                    <p>Fresh, authentic pizza with premium toppings. Vegetable pizza, half and half pizza, and more</p>
+                    <div class="price">ETB 300-500</div>
                     <button class="order-btn">Add to Order</button>
                 </div>
             </div>
             <div class="menu-card">
                 <div class="menu-image">🥓</div>
                 <div class="menu-info">
-                    <h3>Oscar's Triple Stack</h3>
-                    <p>Three beef patties, triple cheese, bacon, and all the toppings</p>
-                    <div class="price">$14.99</div>
+                    <h3>Triple Stack Delight</h3>
+                    <p>Three beef patties, triple cheese, bacon, all premium toppings. For serious burger lovers</p>
+                    <div class="price">ETB 600-800</div>
                     <button class="order-btn">Add to Order</button>
                 </div>
             </div>
@@ -645,9 +885,133 @@
                 <div class="menu-image">🍟</div>
                 <div class="menu-info">
                     <h3>Combo Meal</h3>
-                    <p>Any burger + fries + drink of your choice</p>
-                    <div class="price">$12.99</div>
+                    <p>Any burger + fresh fries + drink of your choice. Perfect for a complete meal</p>
+                    <div class="price">ETB 500-800</div>
                     <button class="order-btn">Add to Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <h2>Customer Reviews</h2>
+        
+        <div class="review-stats">
+            <div class="stat-card">
+                <div class="stat-number">4.5</div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">45+</div>
+                <div class="stat-label">Total Reviews</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Customer Satisfaction</div>
+            </div>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="reviewer-name">Oscar (Verified)</div>
+                        <div class="review-date">4 months ago</div>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                </div>
+                <div class="review-text">
+                    "One of the most underrated burger houses I've ever seen! The food is great, service is so great. I know there's a parking problem but overall I give this a 10/10!"
+                </div>
+                <div class="review-helpful">
+                    <button>👍 Helpful</button>
+                    <button>💬 Reply</button>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="reviewer-name">Happy (Verified)</div>
+                        <div class="review-date">8 months ago</div>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                </div>
+                <div class="review-text">
+                    "I love Oscar! The food is beyond delicious. Every dish is full of flavor. The waiters are so humble and disciplined. The atmosphere is welcoming and service is always good!"
+                </div>
+                <div class="review-helpful">
+                    <button>👍 Helpful</button>
+                    <button>💬 Reply</button>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="reviewer-name">Solomon Degife</div>
+                        <div class="review-date">a year ago</div>
+                    </div>
+                    <div class="review-rating">★★★★☆</div>
+                </div>
+                <div class="review-text">
+                    "We had such a great Jambo burger with fair price. The food was cooked well and its taste was pretty good. Atmosphere is nice but they need more open space for customers."
+                </div>
+                <div class="review-helpful">
+                    <button>👍 Helpful</button>
+                    <button>💬 Reply</button>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="reviewer-name">Beti Mar</div>
+                        <div class="review-date">a year ago</div>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                </div>
+                <div class="review-text">
+                    "Great pizza house with excellent service! The food quality is superb and the atmosphere is welcoming. Highly recommended!"
+                </div>
+                <div class="review-helpful">
+                    <button>👍 Helpful</button>
+                    <button>💬 Reply</button>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="reviewer-name">Anteneh Samson</div>
+                        <div class="review-date">a week ago</div>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                </div>
+                <div class="review-text">
+                    "I love the food! Great quality, amazing taste, and friendly service. Price per person ETB 600-800. This place is worth every penny!"
+                </div>
+                <div class="review-helpful">
+                    <button>👍 Helpful</button>
+                    <button>💬 Reply</button>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-header">
+                    <div>
+                        <div class="reviewer-name">Michael Daniel</div>
+                        <div class="review-date">years ago</div>
+                    </div>
+                    <div class="review-rating">★★★★★</div>
+                </div>
+                <div class="review-text">
+                    "Best burger place!! The quality and taste are consistently excellent. The team provides top-notch service every single time!"
+                </div>
+                <div class="review-helpful">
+                    <button>👍 Helpful</button>
+                    <button>💬 Reply</button>
                 </div>
             </div>
         </div>
@@ -659,20 +1023,23 @@
         <div class="contact-content">
             <div class="contact-item">
                 <h3>📞 Phone</h3>
-                <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                <p><a href="tel:+251-xxx-xxx-xxx">Call Us for Orders</a></p>
+                <p>Available 7 days a week</p>
             </div>
             <div class="contact-item">
                 <h3>📍 Location</h3>
-                <p>123 Burger Street, Food City, FC 12345</p>
+                <p>Addis Ababa, Ethiopia</p>
+                <p>Easy to find, free parking available</p>
             </div>
             <div class="contact-item">
                 <h3>🕒 Hours</h3>
                 <p>Mon - Fri: 11AM - 10PM<br>Sat - Sun: 10AM - 11PM</p>
+                <p>Dine-in, Delivery & Takeout</p>
             </div>
         </div>
 
         <div class="contact-form">
-            <h3 style="margin-bottom: 2rem; color: var(--secondary-color);">Send us a Message</h3>
+            <h3 style="margin-bottom: 2rem; color: var(--secondary-color); text-align: center;">Send us a Message</h3>
             <form onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="name">Your Name</label>
@@ -684,7 +1051,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea id="message" name="message" required placeholder="Tell us about your order or feedback..."></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
@@ -694,10 +1061,20 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 OSCAR BURGER. All rights reserved.</p>
-        <p>Made with ❤️ for burger lovers</p>
+        <p>Made with ❤️ for burger lovers | Premium Quality · Fair Prices · Great Service</p>
     </footer>
 
     <script>
+        // Parallax effect with cursor tracking
+        const parallaxBg = document.getElementById('parallaxBg');
+        
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            parallaxBg.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
+        });
+
         // Mobile menu toggle
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
@@ -730,9 +1107,8 @@
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            // Simple validation
             if (name && email && message) {
-                alert(`Thank you ${name}! We've received your message. We'll get back to you at ${email} soon!`);
+                alert(`Thank you ${name}! We've received your message. We'll get back to you at ${email} soon! 🍔`);
                 event.target.reset();
             }
         }
@@ -742,9 +1118,31 @@
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
                 nav.style.background = 'rgba(0, 78, 137, 1)';
+                nav.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
             } else {
                 nav.style.background = 'rgba(0, 78, 137, 0.98)';
+                nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
             }
+        });
+
+        // Animate review cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-in-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.review-card, .menu-card, .highlight-card').forEach(card => {
+            card.style.opacity = '0';
+            observer.observe(card);
         });
     </script>
 </body>
